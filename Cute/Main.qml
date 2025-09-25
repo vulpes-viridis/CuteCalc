@@ -1,29 +1,77 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 
 Window {
-    width: 300
-    height: 350
+    width: content.implicitWidth
+    height: content.implicitHeight
     visible: true
     title: "CuteCalc"
 
     function setRes() {
         var i = Math.floor(Math.random() * 9)
-        text.text = i
+        res.text = i
     }
 
-    ColumnLayout {
+    Column {
+        id: content
         anchors.fill: parent
         Text {
-            id: text
-            text: "Welc to CuteCalc :D"
-            Layout.alignment: Qt.AlignCenter
+            id: res
+            text: "<i>Welc to CuteCalc :DDD</i>"
         }
-        Button {
-            text: "="
-            Layout.alignment: Qt.AlignRight
-            onClicked: setRes()
+        Grid {
+            id: buttons
+            columns: 4
+
+            Button {
+                text: "1"
+            }
+            Button {
+                text: "2"
+            }
+            Button {
+                text: "3"
+            }
+            Button {
+                text: "+"
+            }
+            Button {
+                text: "4"
+            }
+            Button {
+                text: "5"
+            }
+            Button {
+                text: "6"
+            }
+            Button {
+                text: "-"
+            }
+            Button {
+                text: "7"
+            }
+            Button {
+                text: "8"
+            }
+            Button {
+                text: "9"
+            }
+            Button {
+                text: "×"
+            }
+            Button {
+                text: "√"
+            }
+            Button {
+                text: "0"
+            }
+            Button {
+                text: "÷"
+            }
+            Button {
+                text: "="
+                onClicked: setRes()
+            }
         }
     }
 }
